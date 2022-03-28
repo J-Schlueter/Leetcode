@@ -19,6 +19,10 @@ Output: true
 */
 
 var canConstruct = function(ransomNote, magazine) {
+    if (ransomNote.length > magazine.length) {
+        return false
+    };
+    
     const map = {};
     for(let letter of magazine) {
         if (!map[letter]) {
