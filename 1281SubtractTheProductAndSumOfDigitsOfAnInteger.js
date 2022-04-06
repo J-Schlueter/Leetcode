@@ -34,3 +34,18 @@ var subtractProductAndSum = function(n) {
 
 //Time to solve including whiteboarding 12 mins
 // runtime 60ms memory 42.4
+
+//REFACTOR
+var subtractProductAndSum = function(n) {
+    const num = n.toString().split('');
+    let sum = 0;
+    let product = 1;
+    
+    for (let i of num) {
+        sum += (+i);
+        product *= (+i);
+    }
+    
+    
+    return product - sum;
+};
