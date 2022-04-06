@@ -17,6 +17,7 @@ step 4) adaptation
     so I changed lowestManhattan to start = Infinity
 step 5) refactor
     got rid of validPoints array are lowestIndex can be start at -1 and update for at the first valid coordinate
+    swap 'for' loop to 'for of' and used indexOf(cord), which i think should actually increase runtime to O(n^2) but it also was in the 99th percentile for runtime on its first run so... shrug?
 
 //time to complete to first pass 30 mins, to last refactor 1:30
 // runtime O(n) space O(1)
