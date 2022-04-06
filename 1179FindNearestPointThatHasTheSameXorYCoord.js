@@ -3,6 +3,8 @@ let testX = 71, testY = 13, testPoints = [[32,10],[3,7],[16,65],[57,68],[25,14],
 // testPoints = [[2,3]]
 console.log(nearestValidPoint(testX,testY,testPoints))
 
+//time to complete 1hr+
+// runtime O(n) space O(1)
 function nearestValidPoint(x,y,points){
     // let validPoints = [];
     let lowestManhattan = Infinity;
@@ -17,17 +19,17 @@ function nearestValidPoint(x,y,points){
             }
         }
     }
-    //ALTERNATIVE
-    for (let cord of points){
-        if (cord[0] === x || cord[1] === y){
-            validPoints.push(cord)
-            let mPoint = Math.abs(x - cord[0]) + Math.abs(y - cord[1])
-            if (mPoint < lowestManhattan){
-                lowestManhattan = mPoint;
-                lowestIndex = i
-            }
-        }
-    }
+    //#ALTERNATIVE#
+    // for (let cord of points){
+    //     if (cord[0] === x || cord[1] === y){
+    //         validPoints.push(cord)
+    //         let mPoint = Math.abs(x - cord[0]) + Math.abs(y - cord[1])
+    //         if (mPoint < lowestManhattan){
+    //             lowestManhattan = mPoint;
+    //             lowestIndex = points.indexOf(cord)
+    //         }
+    //     }
+    // }
     // if (validPoints[0] === undefined) {
     //     return -1
     // }
