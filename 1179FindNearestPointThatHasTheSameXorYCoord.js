@@ -4,9 +4,9 @@ let testX = 71, testY = 13, testPoints = [[32,10],[3,7],[16,65],[57,68],[25,14],
 console.log(nearestValidPoint(testX,testY,testPoints))
 
 function nearestValidPoint(x,y,points){
-    let validPoints = [];
+    // let validPoints = [];
     let lowestManhattan = Infinity;
-    let lowestIndex = Infinity;
+    let lowestIndex = -1;
     for (let i = 0; i < points.length; i++){
         if (points[i][0] === x || points[i][1] === y){
             validPoints.push(points[i])
@@ -17,9 +17,20 @@ function nearestValidPoint(x,y,points){
             }
         }
     }
-    if (validPoints[0] === undefined) {
-        return -1
+    //ALTERNATIVE
+    for (let cord of points){
+        if (cord[0] === x || cord[1] === y){
+            validPoints.push(cord)
+            let mPoint = Math.abs(x - cord[0]) + Math.abs(y - cord[1])
+            if (mPoint < lowestManhattan){
+                lowestManhattan = mPoint;
+                lowestIndex = i
+            }
+        }
     }
+    // if (validPoints[0] === undefined) {
+    //     return -1
+    // }
     
     // console.log(validPoints)
     // console.log(lowestManhattan)
@@ -40,11 +51,12 @@ step 2) pseudocode
 step 3) code by each pseudocode step, testing each feature
 step 4) adaptation
     started by creating seperate array of manhattanPoints but decided to keep track of lowest point and check at time of calculation
-    started with for of loop but had to switch to standard for loop to correct return index instead of the closest cord
+    
 
     I was passing 98/101 tests on leetcode, so I had to troubleshoot for a while. The issue was that I had set lowestManhattan = points.length, but some of the test cases had really large manhattan points
     so I changed lowestManhattan to start = Infinity
 step 5) refactor
+    got rid of validPoints array are lowestIndex can be start at -1 and update for at the first valid coordinate
 */
 
 function refactor(x, y, points) {
