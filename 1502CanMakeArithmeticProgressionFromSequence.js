@@ -8,7 +8,14 @@ Explanation: We can reorder the elements as [1,3,5] or [5,3,1] with differences 
 
 Example 2: Input: arr = [1,2,4] Output: false
 Explanation: There is no way to reorder the elements to obtain an arithmetic progression.
+
+Rephrase: take an array and check if the difference between any 2 sequential numbers are the same and for the rest of the array. The array is unsorted.
+Pseudocode: 
+-sort the array
+-loop through the array verifying (current - prev) == (next - current)
+-return false if != else true
 */
+
 
 let testTrue = [3,5,1,7,9]
 let testFalse = [1,2,4]
