@@ -12,12 +12,12 @@ Explanation: There is no way to reorder the elements to obtain an arithmetic pro
 
 let testTrue = [3,5,1,7,9]
 let testFalse = [1,2,4]
-console.log(arithProg(testTrue))
-console.log(arithProg(testFalse))
+console.log(canMakeArithmeticProgression(testTrue))
+console.log(canMakeArithmeticProgression(testFalse))
 //RUNTIME: 83MS MEMORY:42.5MB TIME TO SOLVE 25mins
 //time: O(n^2) space: O(1)
 var canMakeArithmeticProgression = function(arr){
-    // if (arr.size() <= 2) return true; // the exercise constraints are that arr.length > 2
+    // if (arr.size() <= 2) return true; // the exercise constraints are that arr.length > 2 so this line is technically extra
     arr = arr.sort((a,b)=> a - b);
     // console.log(arr)
     let valid = false;
