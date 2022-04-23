@@ -43,6 +43,15 @@ var isPalindrome = function(s) {
 console.log(isPalindrome("A man, a plan, a canal: Panama"));
 console.log(isPalindrome("race a car"));
 
-var topJava = function(s) {
-    
+/*
+var topJavaTranslate = function(s) {
+    let c = s.toCharArray(); //convert array
+    for (int i = 0, j = c.length - 1; i < j; ) { //i = front letter, j = back letter)
+        if (!Character.isLetterOrDigit(c[i])) i++; //if current index isnt alphannum have i skip
+        else if (!Character.isLetterOrDigit(c[j])) j--; // same for j
+        else if (Character.toLowerCase(c[i++]) != Character.toLowerCase(c[j--])) // if both are alphanum, convert to lower case and compare
+            return false;
+    }
+    return true;
 }
+*/
